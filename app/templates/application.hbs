@@ -1,0 +1,31 @@
+{{page-title "Changeset Report"}}
+
+<br>
+<button type="button" {{on "click" this.onAccessNestedArray}}>Access Nested Array</button>
+<button type="button" {{on "click" this.onAccessNestedArrayWithGet}}>Access Nested Array with get() </button>
+
+<h1>Changeset.change keys:</h1>
+<ul>
+  {{#each this.changeKeys as |key|}}
+    <li>{{key}}</li>
+  {{else}}
+    Empty
+  {{/each}}
+</ul>
+
+<h1>Changeset.changes keys:</h1>
+<ul>
+  {{#each this.changesObjectsKeys as |key|}}
+    <li>{{key}}</li>
+  {{else}}
+    Empty
+  {{/each}}
+</ul>
+
+
+{{!-- Also occurs when accessed inside template --}}
+Computers.PC (Array): {{this.changeset.computers.pc}} 
+<br>
+Computers.count (Number): {{this.changeset.computers.count}} 
+<br>
+Computers.favorites.pc (String on Object): {{this.changeset.computers.favorites.pc}} 
